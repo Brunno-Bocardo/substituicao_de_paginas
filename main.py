@@ -11,6 +11,7 @@ def ler_arquivo(arquivo):                                         # Recebe o arq
         print(f"O arquivo '{arquivo}' não foi encontrado.")
         return None
 
+
 #####################################
 #       IMPLEMENTAÇÃO DO FIFO       #
 #####################################
@@ -56,17 +57,17 @@ def lru():
                 vitima = lista_de_exclusão.pop(0)                 # Remove o primeiro elemento da lista de exclusão (o último que foi usado)
                 espaco_de_memoria.remove(vitima)                  # Elimina o primeiro elemento do vetor (pop) do espaço de memória
                 print("   - Página removida: ", vitima)
-
             espaco_de_memoria.append(pagina)                      # Adiciona a página atual no (final) espaço disponível na memória
             lista_de_exclusão.append(pagina)                      # Adiciona a página atual no final da lista de exclusão (representando a mais recente usada)
             lru_falta_de_pagina += 1                              # Incrementa a falta de página
             print("   + Página ", pagina, " adicionada.")
             print("     Memória: ", espaco_de_memoria)
-
+            print("     Vítimas: ", lista_de_exclusão)
         else:                                                     # Se uma página ESTÁ na memória
             lista_de_exclusão.remove(pagina)                      # Remove a página da lista de exclusão
             lista_de_exclusão.append(pagina)                      # Adiciona a página novamente, porém no final (representando a mais recente usada)
             print("   ! Página já está na memória.")
+            print("   ... atualizando ordem de vítimas: ", lista_de_exclusão)
 
     return lru_falta_de_pagina                                    # Retorna o número de falta de páginas
 
@@ -82,8 +83,8 @@ def otm():
     print("\nSimulando OTM . . . . . . . . . . . . . . . . .")
 
     for i, pagina in enumerate(paginas):
+        print("-> Acessando página: ", pagina)
         if pagina not in espaco_de_memoria:
-            print("-> Acessando página: ", pagina)
             if len(espaco_de_memoria) == capacidade:
                 futuras_paginas = paginas[i + 1:]                                             # Cria uma lista a partir do vetor das páginas, que ainda serão chamadas no futuro
                 futuras_paginas_unicas = set(futuras_paginas)                                 # Elimina páginas repetidas (set)
