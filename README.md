@@ -5,7 +5,7 @@ O objetivo deste projeto é escrever um programa para simular os principais algo
 - OPT (Algoritmo ótimo)
 - LRU (Least Recently Used)
 
-A saída esperada para esse projeto é a quantidade de falta de páginas que cada algorítimo apresentou, por exemplo:
+A saída esperada para esse projeto é a quantidade de falta de páginas que cada algorítimo apresentou, algo como:
 - FIFO: 9
 - LRU: 8
 - OTM: 7
