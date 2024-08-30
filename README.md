@@ -1,37 +1,55 @@
 # Algoritmo de Substituição de Páginas
 
-O objetivo deste projeto é escrever um programa para simular os principais algoritmos de substituição de páginas usados no gerenciamento da memória virtual.
-- FIFO (First In, First Out)
-- OPT (Algoritmo ótimo)
-- LRU (Least Recently Used)
+## Introdução
 
-A saída esperada para esse projeto é a quantidade de falta de páginas que cada algorítimo apresentou, algo como:
-- FIFO: 9
-- LRU: 8
-- OTM: 7
+O Algoritmo de Substituição de Páginas é um software desenvolvido com o objetivo de simular os principais algoritmos de substituição de páginas usados na gestão da memória virtual. Esses algoritmos incluem FIFO (First In, First Out), OPT (Algoritmo Ótimo) e LRU (Least Recently Used). O principal objetivo do software é calcular a quantidade de falta de páginas que cada algoritmo apresenta em sua operação. Este software é especialmente útil para desenvolvedores e estudantes de ciências da computação que desejam aprofundar seus conhecimentos sobre o gerenciamento de memória virtual.
 
+## Visão Geral do Projeto
 
-## Setup:
-Para rodar o projeto, deve-se ter intalado o Python em sua máquina. Depois disso, basta executar o arquivo main.py em um editor de código, como O Visual Studio.
+Este projeto simula o funcionamento dos principais algoritmos de substituição de páginas. Ele lê e processa um arquivo de texto que simula as páginas e a ordem em que entram. A primeira linha do arquivo de texto representa a quantidade de espaço disponível na memória.
 
-## Arquivos:
-O projeto possui 2 arquivos.
-- main.py: arquivo que contém os 3 tipos de algoritmo. Ele faz a leitura e processamento do outro arquivo
-- arquivo.txt: arquivo que simula as páginas e ordem com que as páginas entram. Além disso, o número contido na primeira linha representa a quantidade de espaço disponível na memória (como uma simulação)
+## Instalação
 
-## Pílula de Conhecimento:
+### Pré-requisitos
 
-### O que é uma página?
-Página é uma unidade de alocação de memória, com um tamanho fixo de (geralmente) 4 KB. As páginas são usadas para dividir memória (física e virtual) em pedaços gerenciáveis. Esses pedaços são usados como unidade de transferência de dados entre a memória física (RAM) e virtual (disco), facilitando a alocação e o gerenciamento de memória, já que a cópia de páginas inteiras é mais eficiente do que manipular pequenos pedaços de dados. 
+Para rodar o projeto, você precisa ter Python instalado em sua máquina.
 
-### Como é feita a substituição?
-Quando um novo acesso à memória é solicitado e não há espaço disponível nos quadros da memória física, é necessário escolher uma página para ser substituída. Isso é o que os algoritmos de substituição de páginas fazem. Eles selecionam a página a ser substituída com base em suas políticas específicas (FIFO, LRU, OPT, etc.), removendo-a da memória e carregando a nova página no espaço vago.
+### Passos de instalação e configuração
 
-### FIFO:
-Basicamente o algoritmo FIFO é uma fila. O primeiro que entra é o primeiro que sai. Ele funciona da seguinte forma: quando é necessário carregar uma página na memória física, a página mais antiga que está na memória é a primeira a ser removida (a que entrou primeiro).
+1. Baixe o projeto para sua máquina local.
+2. Abra o arquivo `main.py` em um editor de código (por exemplo, Visual Studio).
+3. Execute o arquivo `main.py`.
 
-### LRU:
-O algoritmo LRU substitui a página que não era usada há mais tempo. Ele mantém um registro do histórico de acesso das páginas e remove aquela que foi acessada menos recentemente. Isso é feito com base no princípio de que páginas que não foram usadas recentemente provavelmente não serão usadas no futuro próximo.
+## Como usar
 
-### OTM:
-É um algoritmo que resolve o problema com o mínimo de recursos possíveis. O algoritmo ótimo é um algoritmo ideal, mas teoricamente impossível de implementar na prática. Ele substitui a página que não será usada por mais tempo no futuro. Isso requer prever qual página não será referenciada por mais tempo, o que é difícil de fazer na prática. O algoritmo OPT serve como um ponto de referência para comparar o desempenho de outros algoritmos. Nesse projeto, apenas foi possível simular esse algoritmo pois já tinhamos uma lista de quais seriam as próximas páginas a entrarem, tornando possível a "previsão".
+### Guias de usuário
+
+1. O arquivo `main.py` contém os três tipos de algoritmo. Ele faz a leitura e processamento do arquivo `arquivo.txt`.
+2. O arquivo `arquivo.txt` simula as páginas e a ordem com que as páginas entram. Além disso, o número contido na primeira linha representa a quantidade de espaço disponível na memória (como uma simulação).
+
+### Exemplos e tutoriais
+
+Um exemplo de uso seria simular a entrada de páginas na memória virtual, modificando o arquivo `arquivo.txt` para representar diferentes cenários de entrada de páginas e analisando a quantidade de falta de páginas que cada algoritmo apresenta.
+
+## Como Contribuir
+
+Para contribuir com o projeto, você pode fazer um fork do repositório e propor suas alterações através de um pull request. Por favor, certifique-se de que suas alterações estão de acordo com as boas práticas de codificação e que elas não quebram nenhuma funcionalidade existente.
+
+## Manutenção e Suporte
+
+### Como relatar problemas
+
+Para relatar um problema, você pode criar uma issue no repositório do projeto descrevendo o problema encontrado.
+
+### FAQ
+
+- **O que é uma página?** Página é uma unidade de alocação de memória, com um tamanho fixo de (geralmente) 4 KB. 
+- **Como é feita a substituição de páginas?** Quando um novo acesso à memória é solicitado e não há espaço disponível nos quadros da memória física, é necessário escolher uma página para ser substituída.
+
+### Contatos
+
+Para mais informações, você pode entrar em contato conosco através do email: contato@algoritmodesubstituicaodepaginas.com
+
+## Licença e Termos
+
+Este projeto é licenciado sob a Licença MIT. Para mais detalhes, por favor, veja o arquivo LICENSE no repositório do projeto.
